@@ -1,9 +1,28 @@
 server:
-  port: 8081
+  port: 8083
+
 
 spring:
   cloud:
     config:
       server:
         git:
-          url:
+          uri: https://github.com/nicolas1992app/Proyecto_microservicios.git
+          searchPaths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+          default-label: "master"
+        bootstrap: true
+
+  security:
+    user:
+      name: root
+      password: s3cr3t
+
+  application:
+    name: config-services
+
+
+
+
+
